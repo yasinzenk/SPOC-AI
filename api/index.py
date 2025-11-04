@@ -1,14 +1,19 @@
-# api/index.py
-from fastapi import FastAPI
-import gradio as gr
-from app import demo  # importe l'objet 'demo'
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
+import httpx, os
 
+HF_ENDPOINT = os.environ.get("HF_ENDPOINT")  # ex: ton endpoint Spaces/Endpoint
 app = FastAPI()
 
-# Monte Gradio à la racine
-app = gr.mount_gradio_app(app, demo, path="/")
+class PredictIn(BaseModel):
+    image_url: str
+    threshold: float = 0.9
 
-# Petit healthcheck pour debug
-@app.get("/api/health")
-def health():
-    return {"ok": True}
+@app.post("/predict")
+async def predict(payload: PredictIn):
+    if not HF_ENDPOINT:
+        raise HTTPException(500, "HF_ENDPOINT not set")
+    async with httpx.AsyncClient(timeout=60) as client:
+        r = await client.post(HF_ENDPOINT, json=payload.dict())
+        r.raise_for_status()
+        return r.json()
