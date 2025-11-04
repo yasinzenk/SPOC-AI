@@ -1,0 +1,7 @@
+gradio
+fastapi
+uvicorn
+transformers
+torch
+timm
+pillow
