@@ -57,18 +57,6 @@ source .venv/bin/activate
 
 ### 3. Install dependencies
 
-Your `requirements.txt` should contain at least:
-
-```txt
-fastapi
-uvicorn
-httpx
-pydantic
-torch
-transformers
-gradio
-pillow
-
 Then install everything with:
 ```bash
 pip install -r requirements.txt
