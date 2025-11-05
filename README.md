@@ -46,14 +46,14 @@ For each uploaded or captured image:
 ```bash
 git clone https://github.com/ton-utilisateur/spoc_ai
 cd spoc_ai
-python3 -m venv .venv
-source .venv/bin/activate
+```
 
 ### 2. Create and activate a virtual environment
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
+```
 
 ### 3. Install dependencies
 
@@ -73,6 +73,7 @@ Then install everything with:
 
 ```bash
 pip install -r requirements.txt
+```
 
 ### ▶️ Run the application locally
 
@@ -85,6 +86,7 @@ You’ll see output like this:
 
 Running on local URL: http://0.0.0.0:7860
 Running on public URL: https://xxxxxx.gradio.live
+```
 
 ## 🖼 How It Works (Step by Step)
 
