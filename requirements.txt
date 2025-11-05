@@ -2,3 +2,25 @@ fastapi
 uvicorn
 httpx
 pydantic
+
+# Serveur Gradio
+gradio==5.3.0
+
+# Modèle HF
+transformers==4.41.2
+huggingface_hub>=0.23.2,<1.0
+
+# Torch CPU (ok pour Spaces CPU)
+torch==2.2.2
+timm==0.9.16
+safetensors==0.4.3
+pillow==10.3.0
+
+# Épingle NumPy < 2 pour éviter le crash Torch/NumPy 2.x
+numpy<2
+
+# (optionnel si tu n’utilises pas FastAPI)
+fastapi
+uvicorn
+httpx
+pydantic

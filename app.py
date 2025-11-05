@@ -100,7 +100,7 @@ with demo:
                 gr.HTML("<h3>Image</h3>")
                 inp = gr.Image(
                     type="pil",
-                    label=None,
+                    label="",
                     height=360,
                     elem_id="input-image",
                     value="https://www.setupgaming.fr/wp-content/uploads/elementor/thumbs/Comment-creer-un-setup-gaming-sans-depenser-une-fortune-Astuces-pour-un-setup-gratuit-SetupGaming-scaled-r0m2hndozsa8gy65m8fzeijrn5wydq4z3tzx4b7ib4.jpg"
@@ -112,13 +112,12 @@ with demo:
         with gr.Column(scale=6):
             with gr.Group(elem_classes=["card"]):
                 gr.HTML("<h3>Detections</h3>")
-                out_img = gr.Image(type="pil", label=None, height=360)
+                out_img = gr.Image(type="pil", label="", height=360)
                 out_tbl = gr.Dataframe(
                     headers=["Label", "Score", "X1", "Y1", "X2", "Y2"],
                     label="Detections (table)",
                     interactive=False,
                     wrap=True,
-                    height=220,
                 )
 
     detect_btn.click(detect, inputs=[inp, thr], outputs=[out_img, out_tbl])
@@ -129,4 +128,4 @@ if __name__ == "__main__":
     from transformers.utils import logging as hf_logging
     hf_logging.set_verbosity_error()
 
-    demo.launch(server_name="0.0.0.0", server_port=7860)
+    demo.launch(server_name="0.0.0.0", server_port=7860, share=True)

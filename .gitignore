@@ -1,7 +1,19 @@
+cat > .gitignore <<'EOF'
+# Python
 __pycache__/
 *.pyc
+
+# Environnements / caches
 .venv/
+.env/
 .DS_Store
-.vscode/
-.idea/
 gradio_cached_examples/
+
+# Autres
+*.log
+EOF
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
