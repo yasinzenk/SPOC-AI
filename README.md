@@ -96,16 +96,6 @@ Running on public URL: https://xxxxxx.gradio.live
    - An annotated image with bounding boxes.  
    - A table listing all detected objects with their scores and coordinates.
 
-## 🧩 Project Structure
-
-spoc_ai/
-│
-├── app.py # Main Gradio application
-├── requirements.txt # Python dependencies
-├── static/
-│ └── style.css # Custom frontend styles
-└── README.md # Project documentation
-
 ## 💡 Next Improvements
 
 - 🚀 Add support for **image batch processing**  
