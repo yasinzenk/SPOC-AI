@@ -68,12 +68,12 @@ Once installed, simply run:
 
 ```bash
 python app.py
+```
 
 You’ll see output like this:
 
 Running on local URL: http://0.0.0.0:7860
 Running on public URL: https://xxxxxx.gradio.live
-```
 
 ## 🖼 How It Works (Step by Step)
 
